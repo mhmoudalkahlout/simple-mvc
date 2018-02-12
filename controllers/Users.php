@@ -9,6 +9,7 @@ class Users extends Controller
 
 	public function index()
 	{
+		new My_rb();
 		$this->view->allUsers = R::findAll( 'users' );
 		$this->view->title = 'users';
 		$this->view->render('users/view');
