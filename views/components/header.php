@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<!-- Tell the browser to be responsive to screen width -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Bootstrap 3.3.6 -->
+		<!-- Bootstrap -->
 		<link rel="stylesheet" href="<?php echo __ROOT__ . '/dist/css/bootstrap.min.css' ?>" />
 	</head>
 	<body>

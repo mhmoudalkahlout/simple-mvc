@@ -9,8 +9,11 @@ define ('__USERNAME__', 'root');
 define ('__PASSWORD__', '');
 define ('__DATABASE__', 'test_db');
 spl_autoload_register(function ($className) {
-    if (file_exists('libs/' . $className . '.php')) { 
-        require_once 'libs/' . $className . '.php'; 
+    if (file_exists('system/' . $className . '.php')) { 
+        require_once 'system/' . $className . '.php'; 
+    }
+    else if (file_exists('libraries/' . $className . '.php')) { 
+        require_once 'libraries/' . $className . '.php'; 
     }
 	else if (file_exists('controllers/' . $className . '.php')) { 
         require_once 'controllers/' . $className . '.php'; 
