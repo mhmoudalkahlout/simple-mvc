@@ -2,18 +2,18 @@
 
 class View
 {
-	public function __construct()
+	public function render($viewPath, $layout = NULL)
 	{
-		
-	}
-	
-	public function render($viewPath)
-	{
-		if ($viewPath == 'error/index')
-			require("views/$viewPath.php");
-		else {
+		if ($layout === NULL) {
 			$this->view = $viewPath;
 			require('views/layout.php');
-		}	
+		}
+		else if ($layout === FALSE) {
+			require('views/' . $viewPath . '.php');			
+		}
+		else {
+			$this->view = $viewPath;
+			require("views/$layout.php");
+		}
 	}
 }

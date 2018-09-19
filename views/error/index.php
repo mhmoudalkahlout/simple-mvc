@@ -3,20 +3,15 @@
 <html>
 	<head>
 		<title>Page not found</title>
-		<style>
-			body {
-			  background: #262626;
-			}
-		</style>
 	</head>
 	<body>
 		<center>
-		    <canvas id="404" height="600" width="800"></canvas>
+		    <canvas id="error-canvas" height="550" width="800"></canvas>
 		</center>
 	</body>
 	<script>
 		// Get our canvas & context
-		var c 	= document.getElementById("404");
+		var c 	= document.getElementById("error-canvas");
 		var ctx = c.getContext("2d");
 
 		/* START CONFIG VARS */

@@ -14,7 +14,7 @@
 		$password = $password? $password:__PASSWORD__;
 		$pdo_options[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
 		try{
-			self::$instance = new pdo( 'mysql:host='.$localhost.';dbname='.$dbname,
+			self::$instance = new pdo( 'mysql:host='.$localhost.';dbname='.$dbname.';charset=utf8',
 							$username,
 							$password,
 							$pdo_options);

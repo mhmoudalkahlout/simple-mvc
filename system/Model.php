@@ -10,9 +10,9 @@ class Model
 	protected $_read_only = FALSE;
 	protected $db = NULL;
 	protected $paranthArr = array( '(', ')' );
-	public function __construct()
+	public function __construct($localhost = NULL, $dbname = NULL, $username = NULL, $password = NULL)
 	{
-		$this->db = Db::getInstance();
+		$this->db = Db::getInstance($localhost, $dbname, $username, $password);
 	}
 
 	public function get($id = NULL, $single = FALSE, $select = '*')
@@ -116,9 +116,10 @@ class Model
 			return 1;
 		$stmt = $this->db->prepare("DELETE FROM $this->_table_name WHERE $this->_primary_key = :id");
 		$stmt->bindParam(':id', $id, PDO::PARAM_INT);   
-		$stmt->execute();
+		$result = $stmt->execute();
 		$stmt = $this->db->prepare("ALTER TABLE $this->_table_name AUTO_INCREMENT = 1");
 		$stmt->execute();
+		return $result;
 	}
 	
 }

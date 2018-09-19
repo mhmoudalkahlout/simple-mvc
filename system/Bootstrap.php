@@ -16,12 +16,7 @@ class Bootstrap
 				if (!empty($tokens)) {
 					$actionName = array_shift($tokens);
 					if (method_exists ( $controller , $actionName )) {
-						if(!empty($tokens)) {
-							$controller->{$actionName}($tokens);	
-						}
-						else {
-							$controller->{$actionName}();
-						}
+						$controller->{$actionName}(@$tokens);	
 					}
 					else {
 						$flag = TRUE;
