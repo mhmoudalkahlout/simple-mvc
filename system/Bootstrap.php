@@ -11,7 +11,7 @@ class Bootstrap
 			
 			// 2. Dispatcher
 			$controllerName = ucfirst(array_shift($tokens));
-			if (file_exists('controllers/'.$controllerName.'.php')) {
+			if (file_exists('Controllers/'.$controllerName.'.php')) {
 				$controller = new $controllerName();
 				if (!empty($tokens)) {
 					$actionName = array_shift($tokens);

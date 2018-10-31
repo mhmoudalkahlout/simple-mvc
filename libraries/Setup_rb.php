@@ -1,6 +1,6 @@
 <?php defined('__ROOT__') OR exit('No direct script access allowed');
 
-require_once __ROOT_PATH__.'/third_party/rb.php';
+require_once __ROOT_PATH__.'/Third_party/rb.php';
 class Setup_rb
 {
 	public function __construct($localhost = NULL, $dbname = NULL, $username = NULL, $password = NULL)
@@ -9,7 +9,9 @@ class Setup_rb
 		$dbname 	= $dbname? $dbname:__DATABASE__;
 		$username 	= $username? $username:__USERNAME__;
 		$password 	= $password? $password:__PASSWORD__;
-		R::setup( "mysql:host=$localhost;dbname=$dbname;charset=utf8", $username, $password);
-		R::freeze( TRUE );
+		if(!R::testConnection()) {
+			R::setup( "mysql:host=$localhost;dbname=$dbname;charset=utf8", $username, $password);
+			R::freeze( TRUE );
+		}
 	}
 }

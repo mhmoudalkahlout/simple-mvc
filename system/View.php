@@ -6,14 +6,14 @@ class View
 	{
 		if ($layout === NULL) {
 			$this->view = $viewPath;
-			require('views/layout.php');
+			require('Views/layout.php');
 		}
 		else if ($layout === FALSE) {
-			require('views/' . $viewPath . '.php');			
+			require('Views/' . $viewPath . '.php');			
 		}
 		else {
 			$this->view = $viewPath;
-			require("views/$layout.php");
+			require("Views/$layout.php");
 		}
 	}
 }
