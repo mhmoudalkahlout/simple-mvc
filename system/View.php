@@ -2,6 +2,8 @@
 
 class View
 {
+    public $view, $title;
+    
 	public function render($viewPath, $layout = NULL)
 	{
 		if ($layout === NULL) {

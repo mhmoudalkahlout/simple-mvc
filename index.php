@@ -8,7 +8,7 @@ define ('__ROOT_PATH__', realpath($_SERVER['DOCUMENT_ROOT'].'/'.$script_name));
 define ('__HOSTNAME__', 'localhost');
 define ('__USERNAME__', 'root');
 define ('__PASSWORD__', '');
-define ('__DATABASE__', 'test_db');
+define ('__DATABASE__', 'test');
 spl_autoload_register(function ($className) {
     if (file_exists('system/' . $className . '.php')) { 
         require_once 'system/' . $className . '.php'; 
