@@ -9,8 +9,8 @@ class Users extends My_controller
 
 	public function index()
 	{
-		$this->view->allUsers = R::findAll( 'users' );
 		$this->view->title = 'users';
+        $this->view->data['allUsers'] = R::findAll( 'users' );
 		$this->view->render('users/view');
 	}
 }

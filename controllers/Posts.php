@@ -4,8 +4,8 @@ class Posts extends My_controller
 {
 	public function index()
 	{
-		$this->view->allPosts = Post::all();
 		$this->view->title = 'posts';
+        $this->view->data['allPosts'] = Post::all();
 		$this->view->render('posts/view');
 	}
 }

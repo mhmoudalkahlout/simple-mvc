@@ -3,6 +3,7 @@
 class View
 {
     public $view, $title;
+    public $data = [];
     
 	public function render($viewPath, $layout = NULL)
 	{
