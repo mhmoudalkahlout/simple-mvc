@@ -10,17 +10,17 @@ define ('__USERNAME__', 'root');
 define ('__PASSWORD__', '');
 define ('__DATABASE__', 'test');
 spl_autoload_register(function ($className) {
-    if (file_exists('system/' . $className . '.php')) { 
-        require_once 'system/' . $className . '.php'; 
+    if (file_exists('System/' . $className . '.php')) { 
+        require_once 'System/' . $className . '.php'; 
     }
-	else if (file_exists('controllers/' . $className . '.php')) { 
-        require_once 'controllers/' . $className . '.php'; 
+	else if (file_exists('Controllers/' . $className . '.php')) { 
+        require_once 'Controllers/' . $className . '.php'; 
     }
-	else if (file_exists('models/' . $className . '.php')) { 
-        require_once 'models/' . $className . '.php'; 
+	else if (file_exists('Models/' . $className . '.php')) { 
+        require_once 'Models/' . $className . '.php'; 
     }
-    else if (file_exists('libraries/' . $className . '.php')) { 
-        require_once 'libraries/' . $className . '.php'; 
+    else if (file_exists('Libraries/' . $className . '.php')) { 
+        require_once 'Libraries/' . $className . '.php'; 
     }
     else if (file_exists($className . '.php')) { 
         require_once $className . '.php'; 
